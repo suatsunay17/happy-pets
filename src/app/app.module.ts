@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -25,7 +25,14 @@ import { ProductBoxComponent } from './pages/home/components/product-box/product
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -36,6 +43,9 @@ import { FirebaseService } from './services/firebase.service';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdoptComponent } from './pages/adopt/adopt.component';
+import { PetService } from './services/pet-service.service';
+import { GlobalErrorHandlerService } from './shared/error-handler';
 
 @NgModule({
   declarations: [
@@ -48,6 +58,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     LoginComponent,
     RegisterComponent,
+    AdoptComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +88,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [CartService, StoreService,FirebaseService,AppComponent],
+  providers: [
+    CartService,
+    StoreService,
+    FirebaseService,
+    AppComponent,
+    PetService,
+    {
+      provide:ErrorHandler,useClass:GlobalErrorHandlerService
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

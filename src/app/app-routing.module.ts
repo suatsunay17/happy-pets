@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { AdoptComponent } from './pages/adopt/adopt.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,16 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
-  }
+    component: RegisterComponent,
+  },
+  {
+    path: 'adopt',
+    component: AdoptComponent,
+  },
 ];
 
 @NgModule({

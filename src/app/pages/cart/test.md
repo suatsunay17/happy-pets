@@ -240,3 +240,151 @@
     "image": "https://m.media-amazon.com/images/I/51PvKPjMs1L.jpg"
   }
 ]
+
+
+
+
+
+
+[
+  {
+    "id": 1,
+    "name": "Buddy",
+    "description": "Friendly and playful dog looking for a loving home.",
+    "age": 2,
+    "image": "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"
+  },
+  {
+    "id": 2,
+    "name": "Whiskers",
+    "description": "Adorable and cuddly cat who loves to purr.",
+    "age": 1,
+    "image": "https://i.natgeofe.com/k/ad9b542e-c4a0-4d0b-9147-da17121b4c98/MOmeow1_4x3.png"
+  },
+  {
+    "id": 3,
+    "name": "Rocky",
+    "description": "Energetic and loyal dog who enjoys outdoor adventures.",
+    "age": 3,
+    "image": "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Mittens",
+    "description": "Playful kitten with soft fur and a curious personality.",
+    "age": 0.5,
+    "image": "https://www.scotsman.com/webimg/b25lY21zOjJiN2Q1NjhlLWI5ZDMtNGM2ZS1iOTFjLTNkYjcwOTE3OGI0NzplNWFkZDUxYy0yZjNiLTRiM2QtOTRjMC04YjllN2VhY2U3Mzg=.jpg?width=1200&enable=upscale"
+  },
+  {
+    "id": 5,
+    "name": "Oscar",
+    "description": "Gentle and affectionate rabbit looking for a caring owner.",
+    "age": 1.5,
+    "image": "https://www.vetcarepethospital.ca/wp-content/uploads/sites/247/2022/03/petrabbitcare-1-scaled.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sasha",
+    "description": "Graceful and elegant cat with a love for napping in sunny spots.",
+    "age": 2.5,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Max",
+    "description": "Lively and intelligent dog ready for training and playtime.",
+    "age": 1.8,
+    "image": "https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Nala",
+    "description": "Curious and social kitten who adores human companionship.",
+    "age": 0.7,
+    "image": "https://www.peta.org.uk/wp-content/uploads/2022/02/cute-cat-keep-cats-indoors-peta.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Charlie",
+    "description": "Sweet and gentle dog who loves belly rubs and cuddles.",
+    "age": 4,
+    "image": "https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=Bg2K7j7J"
+  },
+  {
+    "id": 10,
+    "name": "Luna",
+    "description": "Mysterious and enchanting cat with striking green eyes.",
+    "age": 2,
+    "image": "https://www.rd.com/wp-content/uploads/2019/11/cat-10-e1573844975155.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Teddy",
+    "description": "Loyal and affectionate dog who makes a great companion.",
+    "age": 2.7,
+    "image": "https://dogtime.com/wp-content/uploads/sites/12/2023/07/GettyImages-157603003-e1691515742713.jpg?w=1024"
+  },
+  {
+    "id": 12,
+    "name": "Cleo",
+    "description": "Elegant and regal cat who enjoys lounging in style.",
+    "age": 3,
+    "image": "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Bella",
+    "description": "Playful and energetic puppy ready for adventures.",
+    "age": 0.8,
+    "image": "https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/activities-fun/10-great-small-dog-breeds/maltese-portrait.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Simba",
+    "description": "Confident and charismatic cat who loves to be the center of attention.",
+    "age": 2.2,
+    "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-08/220805-domestic-cat-mjf-1540-382ba2.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Bailey",
+    "description": "Active and friendly dog who enjoys long walks and fetch.",
+    "age": 2.5,
+    "image": "https://th-thumbnailer.cdn-si-edu.com/SdKYWifCKfE2g8O-po_SO99hQ-Y=/1000x750/filters:no_upscale():focal(3126x2084:3127x2085)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ec/e6/ece69181-708a-496e-b2b7-eaf7078b99e0/gettyimages-1310156391.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Milo",
+    "description": "Charming and mischievous kitten with a playful personality.",
+    "age": 0.6,
+    "image": "https://www.webbox.co.uk/wp-content/uploads/2020/10/angry_cat_2-scaled.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Riley",
+    "description": "Eager and intelligent dog ready to learn new tricks and commands.",
+    "age": 1.9,
+    "image": "https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Sophie",
+    "description": "Gentle and affectionate cat who loves to snuggle.",
+    "age": 2.8,
+    "image": "https://us.feliway.com/cdn/shop/articles/FELIWAY___June_2020___How_Much_Space_Does_A_Cat_Need-2_1200x1200.webp?v=1667410689"
+  },
+  {
+    "id": 19,
+    "name": "Cooper",
+    "description": "Lively and spirited puppy who brings joy to any home.",
+    "age": 0.9,
+    "image": "https://www.thekennelclub.org.uk/media/3267/toy.jpg?mode=crop&width=800&height=600&rnd=132188804840000000"
+  },
+  {
+    "id": 20,
+    "name": "Leo",
+    "description": "Confident and playful cat with a penchant for exploring.",
+    "age": 2.3,
+    "image": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-07/220726-cat-theo-elise-ew-636p-6cd3b0.jpg"
+  }
+]

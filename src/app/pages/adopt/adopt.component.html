@@ -1,0 +1,12 @@
+<div class="adoption-page">
+    <h2>Find Your Perfect Pet</h2>
+    <div class="pet-list">
+      <div class="pet-card" *ngFor="let pet of availablePets">
+        <img [src]="pet.image" alt="{{ pet.name }}" />
+        <h3>{{ pet.name }}</h3>
+        <p>{{ pet.description }}</p>
+        <p>Age: {{ pet.age }}</p>
+        <button (click)="adopt(pet)">Adopt</button>
+      </div>
+    </div>
+  </div>
