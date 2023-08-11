@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
-const STORE_BASE_URL = 'https://fakestoreapi.com';
+const STORE_BASE_URL = 'https://64d691b32a017531bc12c21f.mockapi.io/items';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +11,8 @@ const STORE_BASE_URL = 'https://fakestoreapi.com';
 export class StoreService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllProducts(limit = '12', sort = 'desc',category?:string): Observable<Array<Product>> {
-    return this.httpClient.get<Array<Product>>(`${STORE_BASE_URL}/products${category ? '/category/' : ''}?sort=${sort}&limit=${limit}`);
+  getAllProducts(): Observable<Array<Product>> {
+    return this.httpClient.get<Array<Product>>(`${STORE_BASE_URL}`);
   }
 
   getAllCategories():Observable<Array<string>>{

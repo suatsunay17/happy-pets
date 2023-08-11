@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        #emailInput
+        required
+        placeholder="johndoe@gmail.com"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        #passwordInput
+        required
+      />
+    </div>
+    <button (click)="onSignin(emailInput.value,passwordInput.value)">Login</button>
+  </div>
+</form>
+
+<!-- 
+    (ngSubmit)="onLoginSubmit()"
+    [(ngModel)]="email"
+     [(ngModel)]="password"
+   -->

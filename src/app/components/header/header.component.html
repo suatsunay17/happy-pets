@@ -2,6 +2,14 @@
     <a routerLink="home">Happy Pets</a>
     <a routerLink="donate">Donate</a>
     <a routerLink="adopt">Adopt</a>
+    <div class="auth" *ngIf="!isSignedIn" >
+        <a routerLink="login">Login</a>
+        <a routerLink="register">Register</a>
+    </div>
+
+        <button *ngIf="isSignedIn" (click)="logout()">Logout</button>
+
+
     <button mat-icon-button [matMenuTriggerFor]="menu">
 
         <mat-icon

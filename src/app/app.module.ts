@@ -27,8 +27,28 @@ import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FirebaseService } from './services/firebase.service';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, ProductsHeaderComponent, FiltersComponent, ProductBoxComponent, CartComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    ProductsHeaderComponent,
+    FiltersComponent,
+    ProductBoxComponent,
+    CartComponent,
+    LoginComponent,
+    RegisterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,9 +65,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyCB_DYzHGBnO-8DHsGkvh12oBwNs_Dp9uA',
+      authDomain: 'pets-ng.firebaseapp.com',
+      projectId: 'pets-ng',
+      storageBucket: 'pets-ng.appspot.com',
+      messagingSenderId: '950547056569',
+      appId: '1:950547056569:web:716777c32f3ea5bdb0d868',
+    }),
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [CartService,StoreService],
+  providers: [CartService, StoreService,FirebaseService,AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
