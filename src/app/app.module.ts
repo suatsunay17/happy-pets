@@ -40,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdoptComponent } from './pages/adopt/adopt.component';
 import { PetService } from './services/pet-service.service';
 import { GlobalErrorHandlerService } from './shared/error-handler';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { GlobalErrorHandlerService } from './shared/error-handler';
     LoginComponent,
     RegisterComponent,
     AdoptComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ import { sameValueGroupValidator } from 'src/app/shared/validators';
 export class RegisterComponent {
   registrationError = false;
   form = this.fb.group({
-    email: ['', [Validators.required]],
+    email: ['', [Validators.required,Validators.email]],
     pass: this.fb.group(
       {
         password: ['', [Validators.required]],
