@@ -25,14 +25,7 @@ import { ProductBoxComponent } from './pages/home/components/product-box/product
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpErrorResponse,
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
-} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -40,6 +33,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FirebaseService } from './services/firebase.service';
+
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -95,8 +89,9 @@ import { GlobalErrorHandlerService } from './shared/error-handler';
     AppComponent,
     PetService,
     {
-      provide:ErrorHandler,useClass:GlobalErrorHandlerService
-    }
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService,
+    },
   ],
   bootstrap: [AppComponent],
 })

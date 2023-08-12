@@ -1,16 +1,16 @@
-import { FormGroup, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
-export function sameValueGroupValidator(
-  controlName1: string,
-  controlName2: string
-): ValidatorFn {
-  return (control) => {
-    const group = control as FormGroup;
-    const ctrl1 = group.get(controlName1);
-    const ctrl2 = group.get(controlName2);
+export function sameValueGroupValidator(controlName: string, matchingControlName: string): ValidatorFn {
+  return (formGroup: AbstractControl): ValidationErrors | null => {
+    const control = formGroup.get(controlName);
+    const matchingControl = formGroup.get(matchingControlName);
 
-    return ctrl1?.value === ctrl2?.value
-      ? null
-      : { sameValueGroupValidator: true };
+    if (control?.value !== matchingControl?.value) {
+      matchingControl?.setErrors({ sameValueGroupValidator: true });
+    } else {
+      matchingControl?.setErrors(null);
+    }
+
+    return null;
   };
 }

@@ -11,29 +11,37 @@ import { sameValueGroupValidator } from 'src/app/shared/validators';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  registrationError = false;
   form = this.fb.group({
     email: ['', [Validators.required]],
     pass: this.fb.group(
       {
-        password: [],
-        rePassword: [],
+        password: ['', [Validators.required]],
+        rePassword: ['', [Validators.required]],
       },
       {
         validators: [sameValueGroupValidator('password', 'rePassword')],
       }
     ),
   });
+
   constructor(
     private fb: FormBuilder,
     public firebaseService: FirebaseService,
     private appComp: AppComponent,
     private router: Router
   ) {}
+
   async onSignup(emailSignup: string, passwordSignup: string) {
-    await this.firebaseService.signup(emailSignup, passwordSignup);
-    if (this.firebaseService.isLoggedIn) {
-      this.appComp.isLoggedIn = true;
+    try {
+      await this.firebaseService.signup(emailSignup, passwordSignup);
+      if (this.firebaseService.isLoggedIn) {
+        this.appComp.isLoggedIn = true;
+      }
+      this.router.navigate(['home']);
+    } catch (error) {
+      console.error('Registration error:', error);
+      this.registrationError = true; // Set the error flag to true
     }
-    this.router.navigate(['home']);
   }
 }

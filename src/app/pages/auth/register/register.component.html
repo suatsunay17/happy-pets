@@ -11,6 +11,9 @@
         name="email"
         required
       />
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+        <div *ngIf="form.get('email')?.errors?.['required']">Email is required.</div>
+      </div>
     </div>
 
     <ng-container formGroupName="pass">
@@ -33,18 +36,14 @@
           formControlName="rePassword"
           required
         />
+        <div *ngIf="form.get('pass')?.hasError('sameValueGroupValidator') && form.get('pass')?.get('rePassword')?.touched" class="error">
+          Passwords do not match.
+        </div>
       </div>
-
-      <p class="error" *ngIf="form.get('pass')?.errors?.['sameValueGroupValidator'] && form.get('pass')?.get('rePassword')?.touched">Passwords does not match!</p>
     </ng-container>
+
     <button (click)="onSignup(emailSignup.value, passwordSignup.value)">
       Register
     </button>
   </div>
 </form>
-
-<!-- 
-(ngSubmit)="onRegisterSubmit()"
-[(ngModel)]="name"
-[(ngModel)]="password"
-   -->

@@ -7,10 +7,14 @@
         type="text"
         id="email"
         name="email"
-        #emailInput
+        formControlName="email"
         required
         placeholder="johndoe@gmail.com"
       />
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error-message">
+        <div *ngIf="form.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="form.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
@@ -18,16 +22,13 @@
         type="password"
         id="password"
         name="password"
-        #passwordInput
+        formControlName="password"
         required
       />
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="error-message">
+        <div *ngIf="form.get('password')?.errors?.['required']">Password is required.</div>
+      </div>
     </div>
-    <button (click)="onSignin(emailInput.value,passwordInput.value)">Login</button>
+    <button (click)="onSignin()">Login</button>
   </div>
 </form>
-
-<!-- 
-    (ngSubmit)="onLoginSubmit()"
-    [(ngModel)]="email"
-     [(ngModel)]="password"
-   -->

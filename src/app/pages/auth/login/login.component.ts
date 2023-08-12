@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +10,37 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  form = this.fb.group({
-    email: ['',[Validators.required]],
-    password:[],
-  })
+  form: FormGroup;
+
   constructor(
     public firebaseService: FirebaseService,
-    private appComp: AppComponent,
-    private router:Router,
-    private fb:FormBuilder
-  ) {}
-  async onSignin(emailInput:string,passwordInput:string) {
-    await this.firebaseService.signin(emailInput, passwordInput);
-    if (this.firebaseService.isLoggedIn) {
-      this.appComp.isLoggedIn = true;
+    private router: Router,
+    private fb: FormBuilder,
+    private appComp: AppComponent
+  ) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+    });
+  }
+
+  async onSignin() {
+    if (this.form.invalid) {
+      return;
     }
-    this.router.navigate(['home']);
+
+    const emailInput = this.form.get('email')?.value;
+    const passwordInput = this.form.get('password')?.value;
+
+    try {
+      await this.firebaseService.signin(emailInput, passwordInput);
+      if (this.firebaseService.isLoggedIn) {
+        this.appComp.isLoggedIn = true;
+        this.router.navigate(['home']);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      // You can display error messages to the user here
+    }
   }
 }
