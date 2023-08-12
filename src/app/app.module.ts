@@ -28,10 +28,6 @@ import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FirebaseService } from './services/firebase.service';
 
 import { LoginComponent } from './pages/auth/login/login.component';
