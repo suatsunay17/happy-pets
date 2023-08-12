@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PetService } from 'src/app/services/pet-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-adopt',
@@ -9,7 +10,7 @@ import { PetService } from 'src/app/services/pet-service.service';
 export class AdoptComponent {
   availablePets: any[] = [];
 
-  constructor(private petService: PetService) {}
+  constructor(private petService: PetService, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.fetchAvailablePets();
@@ -22,24 +23,12 @@ export class AdoptComponent {
   }
 
   adopt(pet: any) {
-    this.petService.adoptPet(pet.id).subscribe({
-      next: (response) => {
-        if (response.success) {
-          // Remove the adopted pet from the list
-          this.availablePets = this.availablePets.filter(
-            (p) => p.id !== pet.id
-          );
+    this.availablePets = this.availablePets.filter((p) => p.id !== pet.id);
 
-          // Update the UI or show a confirmation message
-          console.log('Adoption successful.');
-        } else {
-          // Handle adoption failure
-          console.log('Adoption failed.');
-        }
-      },
-      error: (error) => {
-        console.error('Error adopting pet:', error);
-      },
-    });
+    this._snackBar.open(
+      'You adopted this pet,we will reach you for additional info',
+      'Ok',
+      { duration: 3000 }
+    );
   }
 }

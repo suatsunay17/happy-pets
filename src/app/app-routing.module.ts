@@ -5,6 +5,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { AdoptComponent } from './pages/adopt/adopt.component';
+import { AdoptionGuard } from './shared/can-activate-route.guard';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
   {
     path: 'adopt',
     component: AdoptComponent,
+    canActivate:[AdoptionGuard]
   },
 ];
 

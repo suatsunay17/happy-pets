@@ -13,8 +13,4 @@ export class PetService {
   getAvailablePets(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/pets/available`);
   }
-
-  adoptPet(petId: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/pets/adopt/${petId}`);
-  }
 }
